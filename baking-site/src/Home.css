@@ -1,3 +1,33 @@
+@font-face {
+    font-family: 'CookieMonster';
+    src: url('CookieMonster.ttf') format('TrueType');
+}
+main {
+    background-color: #f8a3aa;
+}
+
 h1 {
-    background-color: red;
+    font-family: 'CookieMonster', sans-serif;
+    background-color: #fae5f2;
+    padding: 15px;
+    text-align: left;
+    color: black;
+    
+}
+
+section {
+    background-color: #ffcace;
+}
+
+h2{
+    color: black;
+    font-family: "Times New Roman", serif;
+    text-align: left;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+
 }
