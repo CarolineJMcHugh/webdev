@@ -2,32 +2,152 @@
     font-family: 'CookieMonster';
     src: url('CookieMonster.ttf') format('TrueType');
 }
+
+@font-face {
+    font-family: 'InstrumentSerif';
+    src: url('InstrumentSerif-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+    font-family: 'InstrumentSans';
+    src: url('InstrumentSans-Regular.ttf') format('TrueType');
+}
+
+
+
 main {
     background-color: #f8a3aa;
+    font-family: "InstrumentSans", "Arial", sans-serif;
 }
 
 h1 {
     font-family: 'CookieMonster', sans-serif;
     background-color: #fae5f2;
-    padding: 15px;
+    padding: 25px;
     text-align: left;
     color: black;
+    margin-top: 0;
+    font-size: 50px;
     
 }
 
 section {
     background-color: #ffcace;
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 0;
 }
 
 h2{
     color: black;
-    font-family: "Times New Roman", serif;
+    font-family: "InstrumentSerif", "Times New Roman", serif;
     text-align: left;
+    font-size: 19px;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1em;
+    margin: 10px;
+}
 
+.grid-container input[type="search"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.2em;
+    padding-top: 0;
+    border: 1px solid #fae5f2;
+    border-radius: 30px;
+    background: #fae5f2;
+    color: #a73232;
+    font: inherit;
+    font-size: 10px;
+}
+
+.grid-container input[type="search"]::placeholder {
+    color: #a73232;
+}
+.grid-container input[type="search"]:focus-visible {
+    outline: 1px solid #8e3d48;
+}
+
+.search-results {
+    margin: 10px 0 0;
+    padding: 0;
+    color: black;
+    text-align: left;
+    font-size: 12px;
+    list-style: none;
+}
+
+.ingredient-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.ingredient-option input[type="checkbox"] {
+    appearance: none;
+    display: grid;
+    place-content: center;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    border: 1px solid #8e3d48;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.ingredient-option input[type="checkbox"]::before {
+    width: 4px;
+    height: 8px;
+    border: solid #8e3d48;
+    border-width: 0 2px 2px 0;
+    content: "";
+    opacity: 0;
+    transform: translateY(-1px) rotate(45deg);
+}
+
+.ingredient-option input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+.ingredient-option input[type="checkbox"]:focus-visible {
+    outline: 2px solid #8e3d48;
+    outline-offset: 2px;
+}
+
+.search-empty {
+    margin-top: 10px;
+    color: black;
+    text-align: left;
+    font-size: 12px;
+}
+
+.recipe-button {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1;
+    padding: 5px 18px;
+    border: 1px solid white;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "InstrumentSerif", "Times New Roman", serif;
+    font-size: 20px;
+}
+
+.recipe-button:hover {
+    background: #fff8f8;
+}
+
+.recipe-button:focus-visible {
+    outline: 2px solid #8e3d48;
+    outline-offset: 3px;
 }
